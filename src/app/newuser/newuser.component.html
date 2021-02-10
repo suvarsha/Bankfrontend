@@ -1,0 +1,39 @@
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+      
+    
+    
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+      </head>
+    <div class="row">  
+      <div class="col-sm-4" > 
+        </div>
+        <div class="col-sm-6" > 
+           <h1>user</h1>
+          <div [hidden]="submitted" style="width: 400px;">  
+            <form #saveUser1 (ngSubmit)="saveUser(saveUser)"  [formGroup]="newuserSaveForm">  
+              <div class="form-group">  
+                <label for="name">Depositornumber</label>  
+                <input type="text" class="form-control"  formControlName="depositornumber" data-toggle="tooltip"   
+                   data-placement="right" title="Enter depositorname " >  
+                <div class="alert alert-danger" *ngIf = "(newuserSaveForm.get('depositornumber').touched) && (newuserSaveForm.get('depositornumber').invalid)"   
+                  style="margin-top: 5px;">  
+                    <span *ngIf="newuserSaveForm.get('depositornumber').errors.required"> depositorname is Required</span>  
+                      <span *ngIf = "newuserSaveForm.get('depositornumber').errors.minlength">   
+                          MinLength Error   
+                      </span>                     
+                  </div>  
+            </div>
+            <a routerLink="/update" role="button" class='btn btn-primary'>submit</a>
+            </form>
+            </div>
+            </div>
+            </div>
+            </html>

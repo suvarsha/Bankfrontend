@@ -1,0 +1,92 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  </head>
+<div class="row">  
+  <div class="col-sm-4" > 
+    </div>
+    <div class="col-sm-6" > 
+       <h1>Transaction</h1>
+      <div [hidden]="submitted" style="width: 400px;">  
+        <form #saveExistinguser1 (ngSubmit)="saveExistinguser(saveExistinguser)"  [formGroup]="Existinguserform">  
+          <div class="form-group">  
+            <label for="name">Depositorname</label>  
+            <input type="text" class="form-control"  formControlName="depositorname" data-toggle="tooltip"   
+               data-placement="right" title="Enter depositorname " >  
+            <div class="alert alert-danger" *ngIf = "(Existinguserform.get('depositorname').touched) && (Existinguserform.get('depositorname').invalid)"   
+              style="margin-top: 5px;">  
+                <span *ngIf="Existinguserform.get('depositorname').errors.required"> depositorname is Required</span>  
+                  <span *ngIf = "Existinguserform.get('depositorname').errors.minlength">   
+                      MinLength Error   
+                  </span>                     
+              </div>  
+        </div>
+        <div class="form-group">  
+          <label for="name">depositornumber</label>  
+          <input type="text" class="form-control"  formControlName="depositornumber" data-toggle="tooltip"   
+             data-placement="right" title="Enter depositornumber" >  
+          <div class="alert alert-danger" *ngIf = "(Existinguserform.get('depositornumber').touched) && (Existinguserform.get('depositornumber').invalid)"   
+            style="margin-top: 5px;">  
+              <span *ngIf="Existinguserform.get('depositornumber').errors.required">depositornumber is Required</span>                     
+            </div>  
+      </div>
+      <div class="form-group">  
+          <label for="name">opening balance</label>  
+          <input type="number" class="form-control"  formControlName="openingblc" data-toggle="tooltip"   
+             data-placement="right" title="Enter openingblc" >  
+          <div class="alert alert-danger" *ngIf = "(Existinguserform.get('openingblc').touched) && (Existinguserform.get('openingblc').invalid)"   
+            style="margin-top: 5px;">  
+              <span *ngIf="Existinguserform.get('openingblc').errors.required"> opening balance is Required</span>  
+                <span *ngIf = "Existinguserform.get('openingblc').errors.minlength">   
+                    MinLength Error   
+                </span>                     
+            </div>  
+      </div>
+          <div class="form-group">  
+          <label for="name">transcode</label>  
+          <input type="text" class="form-control"  formControlName="transcode" data-toggle="tooltip"   
+             data-placement="right" title="Entertranscode" >  
+          <div class="alert alert-danger" *ngIf = "(Existinguserform.get('transcode').touched) && (Existinguserform.get('transcode').invalid)"   
+            style="margin-top: 5px;">  
+              <span *ngIf="Existinguserform.get('transcode').errors.required"> transcode is Required</span>  
+                                     
+            </div>  
+      </div>
+      <div class="form-group">  
+        <label for="name">amount</label>  
+        <input type="text" class="form-control"  formControlName="amount" data-toggle="tooltip"   
+           data-placement="right" title="Enter amount" >  
+        <div class="alert alert-danger" *ngIf = "(Existinguserform.get('amount').touched) && (Existinguserform.get('amount').invalid)"   
+          style="margin-top: 5px;">  
+            <span *ngIf="Existinguserform.get('amount').errors.required"> amount is Required</span>  
+                                   
+          </div>  
+    </div>
+      
+    <div class="form-group">  
+      <label for="name">closingbalance</label>  
+      <input type="text" class="form-control"  formControlName="closingbalance" data-toggle="tooltip"   
+         data-placement="right" title="Enter amount" >  
+      <div class="alert alert-danger" *ngIf = "(Existinguserform.get('closingbalance').touched) && (Existinguserform.get('closingbalance').invalid)"   
+        style="margin-top: 5px;">  
+          <span *ngIf="Existinguserform.get('closingbalance').errors.required"> closingbalance is Required</span>  
+                                
+        </div>  
+  </div>
+  <button type="submit"    class="btn btn-success">submit</button>
+        
+       </form>
+        </div>
+        </div>
+        <div class="col-sm-2" > 
+          </div>
+        </div>
